@@ -18,6 +18,12 @@ class StubComponent
 	/** @var Main\ErrorCollection */
 	protected $errorCollection;
 
+	public function __construct($component = null)
+	{
+		parent::__construct($component);
+		$this->errorCollection = new Main\ErrorCollection();
+	}
+
 	/**
 	 * Return true if collection has errors.
 	 *
