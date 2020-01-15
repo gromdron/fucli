@@ -223,16 +223,10 @@ foreach ($iterator as $entity) {
 }
 
 $stub = <<<'EOF'
-#!/usr/bin/env php
+#!/usr/bin/php
 <?php
 /*
- * This file is part of Composer.
- *
- * (c) Nils Adermann <naderman@naderman.de>
- *     Jordi Boggiano <j.boggiano@seld.be>
- *
- * For the full copyright and license information, please view
- * the license that is located at the bottom of this file.
+ * This file is part of Fusion Command Line Interface.
  */
 Phar::mapPhar('fucli.phar');
 require 'phar://fucli.phar/src/application.php';
