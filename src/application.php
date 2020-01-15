@@ -5,7 +5,7 @@
  * usable by symfony console
  */
 
-require_once('../vendor/autoload.php');
+require_once(__DIR__.'/../vendor/autoload.php');
 
 use \Fusion\Command;
 use \Symfony\Component\Console;
