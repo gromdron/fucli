@@ -1,0 +1,21 @@
+{
+    "name": "fusion/cli",
+    "description": "Console interface for Bitrix24",
+    "type": "console",
+    "require": {
+        "symfony/console": "2.8"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andrey Nikolaev",
+            "email": "gromdron@yandex.ru"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Fusion\\Command\\": "src/command"
+        }
+    },
+    "minimum-stability": "dev"
+}
