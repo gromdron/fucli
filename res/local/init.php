@@ -6,7 +6,6 @@
  */
 spl_autoload_register(function($sClassName)
 {
-
 	$sClassFile = __DIR__.'/classes';
 
 	if ( file_exists($sClassFile.'/'.str_replace('\\', '/', $sClassName).'.php') )
@@ -27,19 +26,38 @@ spl_autoload_register(function($sClassName)
 });
 
 /**
- * File with event handlers
+ * Project bootstrap files
+ * Include
+ * 
  */
-require_once(__DIR__.'/events.php');
+foreach( [
+	/**
+	 * Env file with local variables
+	 *    external service credentials
+	 *    feature enable flags
+	 */
+	__DIR__.'/env.php',
 
-/**
- * File with project constants
- */
-require_once(__DIR__.'/constants.php');
+	/**
+	 * Events subscribe
+	 */
+	__DIR__.'/events.php',
 
-/**
- * For composer projects
- */
-if ( file_exists(__DIR__.'/vendor/autoload.php') )
+	/**
+	 * Include composer libraries
+	 */
+	__DIR__.'/vendor/autoload.php',
+
+	/**
+	 * Include old legacy code
+	 *   constant initiation etc
+	 */
+	__DIR__.'/legacy.php',
+	]
+	as $filePath )
 {
-	require_once(__DIR__.'/vendor/autoload.php');
+	if ( file_exists($filePath) )
+	{
+		require_once($filePath);
+	}
 }

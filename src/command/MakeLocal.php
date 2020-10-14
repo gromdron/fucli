@@ -12,7 +12,7 @@ class MakeLocal extends Base
 	{
 		$this
 			->setName('make:local')
-			->setDescription('Create local directory with default structure')
+			->setDescription('Create local directory with default project structure')
 			->setHelp("This command will create a local directory with php_interface, components etc.");
 	}
 
@@ -41,10 +41,6 @@ class MakeLocal extends Base
 				'TYPE'   => static::OBJ_TYPE_DIR,
 			],
 			[
-				'PATH'   => '/local/php_interface/install/',
-				'TYPE'   => static::OBJ_TYPE_DIR,
-			],
-			[
 				'PATH'   => '/local/tools/',
 				'TYPE'   => static::OBJ_TYPE_DIR,
 			],
@@ -63,9 +59,19 @@ class MakeLocal extends Base
 				'SOURCE' => 'events.php', 
 			],
 			[
-				'PATH'   => '/local/php_interface/constants.php',
+				'PATH'   => '/local/php_interface/legacy.php',
 				'TYPE'   => static::OBJ_TYPE_FILE,
-				'SOURCE' => 'constants.php', 
+				'SOURCE' => 'legacy.php', 
+			],
+			[
+				'PATH'   => '/local/php_interface/services.php',
+				'TYPE'   => static::OBJ_TYPE_FILE,
+				'SOURCE' => 'services.php', 
+			],
+			[
+				'PATH'   => '/local/php_interface/env.php',
+				'TYPE'   => static::OBJ_TYPE_FILE,
+				'SOURCE' => 'env.php', 
 			],
 		];
 	}
