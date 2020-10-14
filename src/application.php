@@ -19,4 +19,6 @@ $application->add(new Command\MakeLocal());
 
 $application->add(new Command\MakeComponent());
 
+$application->add(new Command\MakeInstall());
+
 $application->run();
