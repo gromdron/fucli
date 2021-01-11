@@ -56,9 +56,9 @@ class MakeInstall extends Base
 	{
 		$io = new Style\SymfonyStyle($input, $output);
 
-		if ( file_exists(getcwd().'/local/') )
+		if ( file_exists(getcwd().'/local/php_interface/install') )
 		{
-			$io->error('Local directory already exist in '.getcwd());
+			$io->error('Local setup directory already exist');
 			return;
 		}
 
