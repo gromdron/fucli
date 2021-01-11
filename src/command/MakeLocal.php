@@ -64,14 +64,9 @@ class MakeLocal extends Base
 				'SOURCE' => 'legacy.php', 
 			],
 			[
-				'PATH'   => '/local/php_interface/services.php',
+				'PATH'   => '/local/php_interface/kernel.php',
 				'TYPE'   => static::OBJ_TYPE_FILE,
-				'SOURCE' => 'services.php', 
-			],
-			[
-				'PATH'   => '/local/php_interface/env.php',
-				'TYPE'   => static::OBJ_TYPE_FILE,
-				'SOURCE' => 'env.php', 
+				'SOURCE' => 'kernel.php', 
 			],
 		];
 	}

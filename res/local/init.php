@@ -32,11 +32,13 @@ spl_autoload_register(function($sClassName)
  */
 foreach( [
 	/**
-	 * Env file with local variables
-	 *    external service credentials
-	 *    feature enable flags
+	 * File for other kernel data:
+	 *    Service local integration
+	 *    Env file with local variables
+	 *        external service credentials
+	 *        feature enable flags
 	 */
-	__DIR__.'/env.php',
+	__DIR__.'/kernel.php',
 
 	/**
 	 * Events subscribe
