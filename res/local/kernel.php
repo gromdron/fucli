@@ -33,7 +33,7 @@ unset($envPath);
  * Service locator section
  *   if exist
  */
-if ( class_exists('Main\DI\ServiceLocator') )
+if ( class_exists('\Bitrix\Main\DI\ServiceLocator') )
 {
 	$serviceLocator = Main\DI\ServiceLocator::getInstance();
 

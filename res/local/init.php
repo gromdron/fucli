@@ -1,8 +1,8 @@
 <?php
 
 /**
- * - /local/classes/{Path|raw}/{*|raw}.php
- * - /local/classes/{Path|ucfirst,lowercase}/{*|ucfirst,lowercase}.php
+ * - /local/php_interface/classes/{Path|raw}/{*|raw}.php
+ * - /local/php_interface/classes/{Path|ucfirst,lowercase}/{*|ucfirst,lowercase}.php
  */
 spl_autoload_register(function($sClassName)
 {
@@ -11,6 +11,7 @@ spl_autoload_register(function($sClassName)
 	if ( file_exists($sClassFile.'/'.str_replace('\\', '/', $sClassName).'.php') )
 	{
 		require_once($sClassFile.'/'.str_replace('\\', '/', $sClassName).'.php');
+		return;
 	}
 
 	$arClass = explode('\\', strtolower($sClassName));
@@ -27,7 +28,7 @@ spl_autoload_register(function($sClassName)
 
 /**
  * Project bootstrap files
- * Include
+ * Include:
  * 
  */
 foreach( [
