@@ -25,9 +25,13 @@ if ( file_exists($envPath.'/.env') )
 	{
 		$env->set($key, $value);
 	}
+	unset($key);
+	unset($value);
 	unset($iniParams);
+	unset($env);
 }
 unset($envPath);
+
 
 /**
  * Service locator section
@@ -57,4 +61,8 @@ if ( class_exists('\Bitrix\Main\DI\ServiceLocator') )
 	 * ]);
 	 * 
 	 */
+	
+
+	/* End service locators */
+	unset($serviceLocator);
 }

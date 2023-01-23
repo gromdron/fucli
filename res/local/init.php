@@ -64,3 +64,4 @@ foreach( [
 		require_once($filePath);
 	}
 }
+unset($filePath);

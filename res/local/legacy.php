@@ -11,4 +11,20 @@
  * Example: 
  *     STRUCTURE_IBLOCK_ID is a valid constant
  *     INFOBLOK_VIZUALNOY_STRUCTURI is a invalid
+ *
+ * Additional in this file you can:
+ *
+ * 1. Include lang file:
+ *    \Bitrix\Main\Localization\Loc::loadMessages(__FILE__);
+ *    Then create lang/<LID>/legacy.php with phrases
+ *
+ * 2. Debug Vue app with:
+ *    define('VUEJS_DEBUG', true);
+ *    define('VUEJS_LOCALIZATION_DEBUG', true);
+ *
+ * 3. Define `custom_mail` function
+ *
+ * 4. Configure theme override
+ *
+ * and etc
  */

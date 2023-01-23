@@ -1,12 +1,13 @@
 <?php
 if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 
-use \Bitrix\Main;
-use \Bitrix\Main\Engine;
-//use \Bitrix\Main\Config\Option;
-//use \Bitrix\Main\Localization\Loc;
+use \Bitrix\Main,
+	\Bitrix\Main\Engine,
+	\Bitrix\Main\Config\Option,
+	\Bitrix\Main\Localization\Loc
+	;
 
-//Loc::loadMessages(__FILE__);
+Loc::loadMessages(__FILE__);
 
 class StubComponent 
 	extends \CBitrixComponent
@@ -14,61 +15,12 @@ class StubComponent
 		Engine\Contract\Controllerable,
 		Main\Errorable
 {
-
-	/** @var Main\ErrorCollection */
-	protected $errorCollection;
+	use Main\ErrorableImplementation;
 
 	public function __construct($component = null)
 	{
 		parent::__construct($component);
 		$this->errorCollection = new Main\ErrorCollection();
-	}
-
-	/**
-	 * Return true if collection has errors.
-	 *
-	 * @return boolean
-	 */
-	public function hasErrors()
-	{
-		if ($this->errorCollection instanceof Main\ErrorCollection)
-		{
-			return !$this->errorCollection->isEmpty();
-		}
-
-		return false;
-	}
-
-	/**
-	 * Getting array of errors.
-	 *
-	 * @return Error[]
-	 */
-	public function getErrors()
-	{
-		if ($this->errorCollection instanceof Main\ErrorCollection)
-		{
-			return $this->errorCollection->toArray();
-		}
-
-		return [];
-	}
-
-	/**
-	 * Returns an error with the necessary code.
-	 *
-	 * @param string|int $code The code of the error.
-	 *
-	 * @return Error|null
-	 */
-	public function getErrorByCode($code)
-	{
-		if ($this->errorCollection instanceof Main\ErrorCollection)
-		{
-			return $this->errorCollection->getErrorByCode($code);
-		}
-
-		return null;		
 	}
 
 	/**

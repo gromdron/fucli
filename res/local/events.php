@@ -15,3 +15,8 @@ $eventManager = \Bitrix\Main\EventManager::getInstance();
  * For old core of bitrix use
  *     $eventManager->addEventHandlerCompatible( #module#, #handler#, [#namespace#, #function#]);
  */
+
+
+
+/* End of events */
+unset($eventManager);
